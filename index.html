@@ -13,7 +13,7 @@
 
 <body class="home">
     <div class="wrapper">
-        <div class="social">
+        <div class="social d-none d-sm-block">
             <ul class="social-menu">
                 <li class="social-menu__item">
                     <a href="" class="social-menu__link">
@@ -43,7 +43,8 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav me-auto">
+                            <button type="button" class="btn-close d-lg-none"></button>
+                            <ul class="navbar-nav me-lg-auto mb-5 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                                 </li>
@@ -56,13 +57,38 @@
                                         data-bs-target="#FaqModal">FAQ</a>
                                 </li>
                             </ul>
-                            <ul class="navbar-nav">
+                            <ul class="navbar-nav mb-5 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link" href="#" data-bs-toggle="modal"
                                         data-bs-target="#WalletModal">Connect Wallet</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">EN</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav d-block d-md-none mb-5 mb-lg-0">
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">Terms & Conditions</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">Privacy Policy</a>
+                                </li>
+                            </ul>
+                            <ul class="social-menu p-0 d-flex d-sm-none">
+                                <li class="social-menu__item">
+                                    <a href="" class="social-menu__link">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="social-menu__item">
+                                    <a href="" class="social-menu__link">
+                                        <i class="fa-brands fa-telegram"></i>
+                                    </a>
+                                </li>
+                                <li class="social-menu__item">
+                                    <a href="" class="social-menu__link">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -72,9 +98,9 @@
         </header>
         <main class="main">
             <div class="bless-block">
-                <a href="#" class="bless-block__link" data-bs-toggle="modal" data-bs-target="#BlessModal">
+                <a href="#" class="bless-block__link name-link" data-bs-toggle="modal" data-bs-target="#BlockTypeModal">
                     <img src="images/bless.svg" alt="Bless" class="bless-block__img">
-                    <span class="bless-block__span">Bless the Worthy</span>
+                    <span class="bless-block__span name-title">Bless the Worthy</span>
                 </a>
             </div>
             <div class="logo-block">
@@ -82,23 +108,23 @@
                 <img src="images/logo.png" alt="Sacrum Templum" class="logo-block__img">
             </div>
             <div class="punish-block">
-                <a href="#" class="punish-block__link" data-bs-toggle="modal" data-bs-target="#PunishModal">
+                <a href="#" class="punish-block__link name-link" data-bs-toggle="modal" data-bs-target="#BlockTypeModal">
                     <img src="images/punish.svg" alt="Punish" class="punish-block__img">
-                    <span class="punish-block__span">Punish the Guilty</span>
+                    <span class="punish-block__span name-title">Punish the Guilty</span>
                 </a>
             </div>
         </main>
         <footer class="footer">
             <div class="container-xxl">
-                <ul class="footer-menu">
-                    <li class="footer-menu__item">
+                <ul class="footer-menu justify-content-center justify-content-md-between">
+                    <li class="footer-menu__item d-none d-md-block">
                         <a href="" class="footer-menu__link">Terms & Conditions</a>
                     </li>
-                    <li class="footer-menu__item">
+                    <li class="footer-menu__item text-center">
                         <a href="" class="footer-menu__link">Sacrum Templum &copy; 2023</a> |
                         <a href="" class="footer-menu__link">Developing by MMIX</a>
                     </li>
-                    <li class="footer-menu__item">
+                    <li class="footer-menu__item d-none d-md-block">
                         <a href="" class="footer-menu__link">Privacy Policy</a>
                     </li>
                 </ul>
@@ -202,13 +228,13 @@
             </div>
         </div>
 
-        <div class="modal fade" id="BlessModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="BlessModalLabel" aria-hidden="true">
+        <div class="modal fade" id="BlockTypeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="BlockTypeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="BlessModalLabel">Bless the Worthy</h3>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header flex-row-reverse">
+                        <h3 class="modal-title" id="BlockTypeModalLabel">Bless the Worthy</h3>
+                        <button type="button" class="btn-close btn-back" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="bless-modal">
@@ -221,68 +247,89 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#PunishModal">Confirm</button>
+                        <button type="button" class="btn btn-primary btn-confirm" data-bs-toggle="modal"
+                            data-bs-target="#BlockNameModal" disabled>Confirm</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="PunishModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="PunishModalLabel" aria-hidden="true">
+        <div class="modal fade" id="BlockNameModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="BlockNameModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="PunishModalLabel">Bless the Worthy</h3>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header flex-row-reverse">
+                        <h3 class="modal-title" id="BlockNameModalLabel">Bless the Worthy</h3>
+                        <button type="button" class="btn-close btn-back" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="punish-modal">
                             <h6>Enter the name</h6>
                             <div class="punish-modal__block">
-                                <input class="punish-modal__input" placeholder="Name">
+                                <input class="punish-modal__input input-confirm" placeholder="Name">
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#TokensModal">Confirm</button>
+                        <button type="button" class="btn btn-primary btn-confirm" data-bs-toggle="modal"
+                            data-bs-target="#BlockTokenModal" disabled>Confirm</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="TokensModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="TokensModalLabel" aria-hidden="true">
+        <div class="modal fade" id="BlockTokenModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="BlockTokenModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="TokensModalLabel">Bless the Worthy</h3>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header flex-row-reverse">
+                        <h3 class="modal-title" id="BlockTokenModalLabel">Bless the Worthy</h3>
+                        <button type="button" class="btn-close btn-back" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="punish-modal">
                             <h6>Amount of Sacrum Tokens to sacrifice</h6>
                             <div class="punish-modal__block">
-                                <input class="punish-modal__input" placeholder="Number">
+                                <input class="punish-modal__input input-confirm" placeholder="Number">
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#CertificateModal">Confirm</button>
+                        <button type="button" class="btn btn-primary btn-confirm" data-bs-toggle="modal"
+                            data-bs-target="#BlockAnimationModal" disabled>Confirm</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="CertificateModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="CertificateModalLabel" aria-hidden="true">
+        <div class="modal fade" id="BlockAnimationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="BlockAnimationModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header flex-row-reverse">
+                        <h3 class="modal-title" id="BlockAnimationModalLabel">Creating</h3>
+                        <button type="button" class="btn-close btn-back" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="animations-modal">
+                            <img src="images/animation.png" class="animations-modal__img" alt="Animations">
+                        </div>
+                    </div>
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#BlockCertificateModal">Confirm</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="BlockCertificateModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="BlockCertificateModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="CertificateModalLabel">Certificate of blessing</h3>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header flex-row-reverse">
+                        <h3 class="modal-title" id="BlockCertificateModalLabel">Certificate of blessing</h3>
+                        <!-- <button type="button" class="btn-close btn-back" data-bs-dismiss="modal" aria-label="Close"></button> -->
                     </div>
                     <div class="modal-body">
                         <div class="certificate-modal">
@@ -292,7 +339,7 @@
                                     on a day of <b>December 12, 2022</b>, the one known as <b>Tom</b> was blessed <b>1346</b> times and now he will have the energy to achieve his goals, the ability to gain wealth, and the luck to make wise decisions. His mind will be sharp, his spirit will be wise, and his strength will be unending. He will be blessed with success and happiness, finding joy and contentment in all he does. He will have the courage to pursue his dreams and the power to overcome any obstacles in his way. He will be blessed with the grace and guidance of the universe.
                                 </div>
                                 <div class="certificate-modal__box">
-                                    <a href="animations.html" class="btn btn-primary confirm">To the begining</a>
+                                    <a href="" class="btn btn-primary confirm" data-bs-dismiss="modal" aria-label="Close">To the begining</a>
                                     <a href="animations.html" class="btn btn-primary confirm">Download</a>
                                 </div>
                                 <div class="certificate-modal__box">
